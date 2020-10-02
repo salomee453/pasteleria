@@ -27,17 +27,9 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="logica.php">Logica</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+    
         </div>
     </form>
   </div>
@@ -51,57 +43,97 @@
        <div class="container text-white">
        <div class="row justify-content-center mt-4">
        <div class= "col-4">
-       <form>
+       <form action="index.php" method="POST">
        <h3 class="text center mb-4">factura de compra</h3>
        <div class="row mb-3">
     <div class="col">
-         <input type="text" class="form-control" placeholder="producto1">
+         <input type="text" class="form-control" placeholder="producto1" name="producto1">
             </div>
              <div class="col">
-                   <input type="number" class="form-control" placeholder="precio($)">
+                   <input type="number" class="form-control" placeholder="precio($)"name="precio1">
                </div>
                </div>
                <div class="row mb-3">
     <div class="col">
-         <input type="text" class="form-control" placeholder="producto2">
+         <input type="text" class="form-control" placeholder="producto2" name="producto2">
             </div>
              <div class="col">
-                   <input type="number" class="form-control" placeholder="precio($)">
+                   <input type="number" class="form-control" placeholder="precio($)" name="precio2">
                </div>
                </div>
                <div class="row mb-3">
     <div class="col">
-         <input type="text" class="form-control" placeholder="producto3">
+         <input type="text" class="form-control" placeholder="producto3" name="producto3">
             </div>
              <div class="col">
-                   <input type="number" class="form-control" placeholder="precio($)">
+                   <input type="number" class="form-control" placeholder="precio($)" name="precio3">
                </div>
                </div>
                <div class="row mb-3">
     <div class="col">
-         <input type="text" class="form-control" placeholder="producto4">
+         <input type="text" class="form-control" placeholder="producto4" name="producto4">
             </div>
              <div class="col">
-                   <input type="number" class="form-control" placeholder="precio($)">
+                   <input type="number" class="form-control" placeholder="precio($)" name="precio4">
                </div>
                </div>
                <div class="row mb-3">
     <div class="col">
-         <input type="text" class="form-control" placeholder="producto5">
+         <input type="text" class="form-control" placeholder="producto5" name="producto5">
             </div>
              <div class="col">
-                   <input type="number" class="form-control" placeholder="precio($)">
+                   <input type="number" class="form-control" placeholder="precio($)" name="precio5">
                </div>
                </div>
-               <button type="submit" class="btn btn-primary btn-block">calcular</button>
+               <button type="submit" class="btn btn-primary btn-block" name="botoncalcular">calcular</button>
 
             </form>
           </forms>
        </div>
+   
+         
 
-       </div>
+
 
      </div>
+    <?php if(isset($_POST["botoncalcular"])): ?>
+        <div class="border bg-dark mt-3 text-while pl-3">
+        <h5> factura de la compra n°1</h5>
+          <h6> 
+          
+       <?php 
+            $precio1=$_POST["precio1"];
+            $producto1=$_POST["producto1"];
+
+            $precio2=$_POST["precio2"];
+            $producto2=$_POST["producto2"];
+
+            $total=$precio1+$precio2;
+
+            echo("el producto 1 es un:".$producto1."----($) ".$precio1); 
+            echo("<br>");
+            echo("el producto 2 es un:".$producto2."----($) ".$precio2);
+            echo("<br>");
+            echo("<br>");
+            echo("*************");
+            echo("el total de la compra fue de:".$total);
+           
+        ?>
+        
+          </h6>
+
+         
+         <?php endif   ?>
+     
+
+     <div class="row mt-4">
+     <h4 class="display-1">
+     </h4>
+
+     
+     </div>
+
+
 
      </main>
      <footer>
